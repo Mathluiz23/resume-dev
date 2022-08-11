@@ -117,4 +117,47 @@ const numbersRandom = [3, 1, 25, 6, 21, 12, 7, 5]
     })
  }
 
-console.log(orderNumbers());
+// console.log(orderNumbers());
+
+/* ---------------------------------Sort-------------------------------------------*/
+
+
+/* ---------------------------------Filter-------------------------------------------*/
+
+function isBigEnough(value) {
+    return value >= 10;
+  }
+  
+  var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+  // filtrado é [12, 130, 44]
+//   console.log(filtered);
+
+
+  const numberss = [1,2,3,4,5];
+
+//   sem filter
+  const filterOddWithFor = (array) => {
+      let newArray = [];
+
+      for (let count = 0; count < array.length; count += 1) {
+          if (array[count] % 2 !== 0) {
+            newArray.push(array[count])
+          };
+      };
+      return newArray;
+  };
+
+  console.log(filterOddWithFor(numberss))
+
+  
+  //   mesma função com filter
+  const filterOdd = (array) => {
+      const arrayFiltered = array.filter((number) => {
+          return number % 2 !== 0;
+      })
+      return arrayFiltered;
+  }
+  console.log(filterOdd(numberss))
+  
+
+/* ---------------------------------Filter-------------------------------------------*/
