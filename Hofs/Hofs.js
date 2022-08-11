@@ -23,14 +23,14 @@ const badMoodGreeting = (name) => {
 
 const numbers = [5, 10, 15, 20, 25, 30];
 
+
+
+/* ---------------------------------ForEach-------------------------------------------*/
 numbers.forEach((element, index, array) => {
-    console.log(`Número do array é ${element} e sua posição no array é ${index}`);
+    // console.log(`Número do array é ${element} e sua posição no array é ${index}`);
     const el = array.pop(); // tira o ultimo elemento do array, ele percorre apaenas 3 vezes porque a cada posição que ele percorre ele retira o último elemento do array.
-    console.log(el);
+    // console.log(el);
 });
-
-
-
 
 
 const multiplyby3WithForEach = () => {
@@ -44,9 +44,12 @@ const multiplyby3WithForEach = () => {
     return newArray;
 };
 
-console.log(multiplyby3WithForEach());
+// console.log(multiplyby3WithForEach());
+/* ---------------------------------ForEach-------------------------------------------*/
 
 
+
+/* ---------------------------------Map-------------------------------------------*/
 const multiplyby3WithMap = () => {
     // map retorna um novo array diretamente
     const newArray = numbers.map((element) => {
@@ -55,5 +58,63 @@ const multiplyby3WithMap = () => {
     return newArray;
 };
 
-console.log(multiplyby3WithMap());
+// console.log(multiplyby3WithMap());
+/* ---------------------------------Map-------------------------------------------*/
 
+
+
+const users = [
+    { firstName: 'Homer', lastName:'Simpson', isDriver: true },
+    { firstName: 'Marge', lastName:'Simpson', isDriver: true },
+    { firstName: 'Bart', lastName:'Simpson', isDriver: false },
+    { firstName: 'Lisa', lastName:'Simpson', isDriver: false },
+    { firstName: 'Maggie', lastName:'Simpson', isDriver: false },
+];
+
+/* ---------------------------------Find-------------------------------------------*/
+// Find retorna o primeiro elemento que satisfaça a condição
+const driver = users.find((user) => {
+    return user.isDriver === true ;
+})
+
+// console.log(driver);
+/* ---------------------------------Find-------------------------------------------*/
+
+
+/* ---------------------------------Some-------------------------------------------*/
+const driverSome = users.some((user) => {
+    // tem algum usuário que é motorista, retorna true ou false
+    return user.isDriver;
+}) 
+
+// console.log(driverSome);
+/* ---------------------------------Some-------------------------------------------*/
+
+
+/* ---------------------------------Every-------------------------------------------*/
+
+const driverEvery = users.every((user) => {
+    // Verifica se todos os usuários satisfaçam a condição e retorna true ou false
+    // Se todos foram isDriver true retorna true, caso algum deles não seja retorna false
+    return user.isDriver;
+}) 
+
+// console.log(driverEvery);
+
+/* ---------------------------------Every-------------------------------------------*/
+
+/* ---------------------------------Sort-------------------------------------------*/
+const numbersRandom = [3, 1, 25, 6, 21, 12, 7, 5]
+
+ const orderNumbers = () => {
+    //  return numbersRandom.sort(); desta maneira ele não retorna de forma certa pois considera como string
+    //  retorno será isso: [ 1, 12, 21, 25, 3,  5,  6,  7];
+
+    // Maneira correta:
+    return numbersRandom.sort((a, b) => {
+        // console.log(a, b);
+        return a - b;
+    })
+ }
+
+console.log(orderNumbers());
