@@ -159,5 +159,59 @@ function isBigEnough(value) {
   }
   console.log(filterOdd(numberss))
   
-
 /* ---------------------------------Filter-------------------------------------------*/
+
+/* ---------------------------------Reduce-------------------------------------------*/
+// Reduce normalmente recebe 2 parametros
+// reduce (acc, currentValue) ou (previousValue, currentValue)
+
+const numbers2 = [2, 3, 4, 6, 8, 12, 24];
+
+const total = numbers2.reduce((acc, currentValue) => {
+    return acc + currentValue;
+})
+
+// console.log('total', total)
+
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+
+const starWars = epic.reduce((acc, currentValue) => {
+    return `${acc} ${currentValue}`;
+});
+
+console.log(starWars);
+
+// Realizando a mesma função com join
+const phrase = epic.join(' ')
+console.log(phrase)
+
+
+const players = [
+    { fullName: 'Adriano Imperador', email: 'didico_imperador@gmail.com'},
+    { fullName: 'Ronaldinho', email: 'gaucho_r10@gmail.com'},
+    { fullName: 'Renato Portaluppi', email: 'renato_gremio@gmail.com'},
+    { fullName: 'Ronaldo', email: 'fenomeno@gmail.com'},
+];
+
+const temp = players.reduce((accumulator, currentValue) => {
+    accumulator[currentValue.fullName] = currentValue.email;
+
+    return accumulator;
+}, {});
+
+// console.log(temp)
+
+const names = ['Alice', 'Bob', 'Matheus', 'Luiz', 'Alice', 'Bruno', 'Matheus'];
+
+const countedNames = names.reduce((allNames, name) => {
+    // console.log(Object.keys(allNames))
+    if (Object.keys(allNames).includes(name)) {
+        allNames[name] += 1;
+    } else {
+        allNames[name] = 1;
+    }
+    return allNames;
+},{});
+
+console.log(countedNames);
+
