@@ -24,3 +24,20 @@ _pop_ O método pop() remove o último elemento de um array e retorna aquele ele
 _sort_ O método sort() ordena os elementos do próprio array e retorna o array. A ordenação não é necessariamente estável. A ordenação padrão é de acordo com a pontuação de código unicode.
 
 _filter_ O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+
+_reduce_
+
+**callbackFn**
+Uma função "redutor" chamada com os seguintes argumentos:
+
+**previousValue**
+O valor resultante da chamada anterior para callbackFn. Na primeira chamada, initialValuese especificado, caso contrário, o valor de array[0].
+
+**currentValue**
+O valor do elemento atual. Na primeira chamada, o valor de array[0]se an initialValuefoi especificado, caso contrário o valor de array[1].
+
+**currentIndex**
+A posição do índice currentValuena matriz. Na primeira chamada, 0se initialValuefoi especificado, caso contrário 1.
+
+array
+A matriz que está sendo percorrida.
