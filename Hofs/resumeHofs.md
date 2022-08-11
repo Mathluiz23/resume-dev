@@ -22,3 +22,5 @@ _every_ O método every() testa se todos os elementos do array passam pelo teste
 _pop_ O método pop() remove o último elemento de um array e retorna aquele elemento.
 
 _sort_ O método sort() ordena os elementos do próprio array e retorna o array. A ordenação não é necessariamente estável. A ordenação padrão é de acordo com a pontuação de código unicode.
+
+_filter_ O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
